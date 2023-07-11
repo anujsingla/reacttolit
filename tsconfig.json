@@ -1,0 +1,15 @@
+{
+  "compilerOptions": {
+    "outDir": "./dist",
+    "module": "esnext",
+    "target": "es5",
+    "jsx": "react-jsx",
+    "lib": ["dom", "es2017"],
+    "strict": true,
+    "esModuleInterop": true,
+    "moduleResolution": "node",
+    "noImplicitAny": false,
+    "strictNullChecks": false
+  },
+  "include": ["src"]
+}
