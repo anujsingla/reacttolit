@@ -1,0 +1,22 @@
+.Toastify__toast-container {
+  width: 95%;
+}
+
+@media (min-width: 992px) {
+  .Toastify__toast-container {
+    width: 600px;
+  }
+}
+
+.Toastify__toast-container > .Toastify__toast {
+  padding: 0px;
+}
+
+.Toastify__toast-body {
+  margin: 0;
+}
+
+.Toastify__toast-body > .pf-c-alert {
+  height: 100%;
+  min-width: 500px;
+}

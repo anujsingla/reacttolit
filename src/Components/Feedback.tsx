@@ -9,8 +9,8 @@ import {
   Checkbox,
   ActionGroup,
   Button,
-  Radio,
 } from "@patternfly/react-core";
+import { ToastNotification } from "./ToastNotification";
 
 export const Feedback = () => {
   const [name, setName] = React.useState("");
@@ -46,6 +46,10 @@ export const Feedback = () => {
     { value: "dr", label: "Dr", disabled: false },
     { value: "other", label: "Other", disabled: false },
   ];
+
+  const onSubmitForm = () => {
+    ToastNotification.addSuccessMessage("successful message");
+  };
 
   return (
     <Form isHorizontal isWidthLimited>
@@ -93,7 +97,7 @@ export const Feedback = () => {
           ))}
         </FormSelect>
       </FormGroup>
-      <FormGroup label="Your experience" fieldId="horizontal-form-exp">
+      <FormGroup label="Comment" fieldId="horizontal-form-exp">
         <TextArea
           value={experience}
           onChange={handleExperienceChange}
@@ -124,31 +128,10 @@ export const Feedback = () => {
           name="alt-form-checkbox-3"
         />
       </FormGroup>
-      <FormGroup
-        role="radiogroup"
-        isStack
-        fieldId="horizontal-form-radio-group"
-        hasNoPaddingTop
-        label="Time zone"
-      >
-        <Radio
-          name="horizontal-inline-radio"
-          label="Eastern"
-          id="horizontal-inline-radio-01"
-        />
-        <Radio
-          name="horizontal-inline-radio"
-          label="Central"
-          id="horizontal-inline-radio-02"
-        />
-        <Radio
-          name="horizontal-inline-radio"
-          label="Pacific"
-          id="horizontal-inline-radio-03"
-        />
-      </FormGroup>
       <ActionGroup>
-        <Button variant="primary">Submit</Button>
+        <Button onClick={onSubmitForm} variant="primary">
+          Submit
+        </Button>
         <Button variant="link">Cancel</Button>
       </ActionGroup>
     </Form>
