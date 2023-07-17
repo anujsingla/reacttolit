@@ -13,12 +13,14 @@ import {
 import { AppTabs, AppTabKey } from "../enum/appTabs";
 import { Link, NavLink } from "react-router-dom";
 import { keys, map } from "lodash";
+import { useAppSelector } from "../redux/reduxHook";
 interface IAppLayout {
   children: React.ReactNode;
 }
 export const mainContentId = "main-content-page-layout";
 
 export function AppLayout({ children }: IAppLayout) {
+  const { productCart } = useAppSelector((state) => state.productCart);
   const logoProps = {
     href: "/",
   };
@@ -45,7 +47,7 @@ export function AppLayout({ children }: IAppLayout) {
 
   const badgeCountObjectNotRead: BadgeCountObject = {
     isRead: false,
-    count: 7,
+    count: productCart?.length || 0,
     className: "custom-badge-unread",
   };
 
