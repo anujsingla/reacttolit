@@ -1,14 +1,17 @@
 import {
+  BadgeCountObject,
+  Button,
   Nav,
   NavItem,
   NavList,
   Page,
   PageHeader,
+  PageHeaderTools,
   PageSection,
   PageSectionVariants,
 } from "@patternfly/react-core";
 import { AppTabs, AppTabKey } from "../enum/appTabs";
-import { NavLink } from "react-router-dom";
+import { Link, NavLink } from "react-router-dom";
 import { keys, map } from "lodash";
 interface IAppLayout {
   children: React.ReactNode;
@@ -39,12 +42,34 @@ export function AppLayout({ children }: IAppLayout) {
       </NavList>
     </Nav>
   );
+
+  const badgeCountObjectNotRead: BadgeCountObject = {
+    isRead: false,
+    count: 7,
+    className: "custom-badge-unread",
+  };
+
+  const headerTools = () => {
+    return (
+      <PageHeaderTools>
+        <Button
+          component={(props: any) => <Link {...props} to="/cart" />}
+          variant="link"
+          countOptions={badgeCountObjectNotRead}
+        >
+          Cart
+        </Button>
+      </PageHeaderTools>
+    );
+  };
+
   const Header = (
     <PageHeader
       logoProps={logoProps}
       logo="React to lit"
       className="react-to-lit-header"
       topNav={PageNav}
+      headerTools={headerTools()}
     />
   );
   return (

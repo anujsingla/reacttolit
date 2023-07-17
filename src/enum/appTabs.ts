@@ -8,19 +8,19 @@ export type AppTabsType = typeof AppTabs;
 export type AppTabKey = keyof typeof AppTabs;
 
 export const AppTabs = {
-  HOME: {
-    id: "home",
-    label: "Home",
+  PRODUCTS: {
+    id: "products",
+    label: "Products",
     path: "/",
   },
-  Page2: {
+  FEEDBACK: {
     id: "feedback",
     label: "Feedback",
     path: "/feedback",
   },
-  Page3: {
-    id: "page3",
-    label: "Page3",
-    path: "/page3",
+  ABOUT: {
+    id: "about",
+    label: "About",
+    path: "/about",
   },
 };
