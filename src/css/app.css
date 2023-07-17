@@ -1,3 +1,7 @@
 #root {
-    height: 100vh;
+  height: 100vh;
+}
+
+.text-align-right {
+  text-align: right;
 }
