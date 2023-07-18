@@ -8,6 +8,7 @@ module.exports = (_, options) => {
   const isEnvDevelopment = ENV === "development";
   const isEnvProduction = ENV === "production";
   return {
+    target: ['es2021'],
     entry: "./src/index.tsx",
     mode: isEnvProduction ? "production" : "development",
     devtool: isEnvProduction ? "source-map" : "cheap-module-source-map",
@@ -15,6 +16,7 @@ module.exports = (_, options) => {
       path: path.resolve(__dirname, "dist"),
       filename: "bundle.js",
       publicPath: "/",
+      chunkFormat: 'module',
     },
     resolve: {
       extensions: [".ts", ".tsx", ".js"],
