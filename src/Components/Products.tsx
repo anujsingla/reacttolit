@@ -31,7 +31,7 @@ export function Products() {
             <CardTitle>
               <img
                 src={product.image}
-                alt={`name icon`}
+                alt={product.title}
                 style={{ maxWidth: "100px" }}
               />
             </CardTitle>

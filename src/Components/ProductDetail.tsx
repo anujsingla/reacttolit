@@ -58,15 +58,15 @@ export function ProductDetail() {
 
   return (
     <Card id="product-details" isFlat>
-      <Grid md={6}>
-        <GridItem
-          style={{
-            minHeight: "800px",
-            backgroundPosition: "center",
-            backgroundSize: "cover",
-            backgroundImage: `url(${productDetail.image})`,
-          }}
-        />
+      <Grid md={3}>
+        <GridItem>
+          <img
+            src={productDetail?.image}
+            alt={productDetail?.title}
+            height="380"
+            width="380"
+          />
+        </GridItem>
         <GridItem>
           <CardTitle>{productDetail.title}</CardTitle>
           <CardBody>{productDetail.description}</CardBody>
