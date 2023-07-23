@@ -29,7 +29,7 @@ export const ViewCartProducts = () => {
                 <GridItem>
                   <img
                     src={productDetail?.image}
-                    alt={"Carlie Anglemire"}
+                    alt={productDetail?.title}
                     height="180"
                     width="180"
                   />
