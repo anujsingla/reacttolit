@@ -30,7 +30,7 @@ export const ViewCartProducts = () => {
                   <img
                     src={productDetail?.image}
                     alt={"Carlie Anglemire"}
-                    height="180"
+                    height="120"
                     width="180"
                   />
                 </GridItem>
@@ -38,6 +38,7 @@ export const ViewCartProducts = () => {
                   <Flex direction={{ default: "column" }}>
                     <FlexItem>{productDetail?.title}</FlexItem>
                     <FlexItem>₹{productDetail?.price}</FlexItem>
+                    <FlexItem>Quantity: {c.quantity}</FlexItem>
                   </Flex>
                 </GridItem>
               </Grid>

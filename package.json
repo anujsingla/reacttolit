@@ -12,6 +12,8 @@
   "author": "",
   "license": "ISC",
   "dependencies": {
+    "@lit-labs/react": "^1.2.1",
+    "@lit/reactive-element": "^1.6.2",
     "@patternfly/patternfly": "^4.224.2",
     "@patternfly/react-core": "^4.276.8",
     "@patternfly/react-icons": "^4.93.6",
@@ -19,6 +21,8 @@
     "@reduxjs/toolkit": "^1.9.5",
     "@types/node": "^20.4.1",
     "css-loader": "^6.8.1",
+    "lit": "^2.7.6",
+    "lit-html": "^2.7.5",
     "lodash": "^4.17.21",
     "mini-css-extract-plugin": "^2.7.6",
     "react": "^18.2.0",

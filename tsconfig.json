@@ -2,14 +2,16 @@
   "compilerOptions": {
     "outDir": "dist",
     "module": "esnext",
-    "target": "es5",
+    "target": "es2021",
     "jsx": "react-jsx",
-    "lib": ["dom", "es2017"],
+    "lib": ["dom", "es2021"],
     "strict": true,
     "esModuleInterop": true,
     "moduleResolution": "node",
     "noImplicitAny": false,
     "strictNullChecks": false,
+    // Lit 3.0 is expected to ship preliminary support for ECMAScript decorators
+    "experimentalDecorators": true,
     "forceConsistentCasingInFileNames": true
   },
   "include": ["src"],
