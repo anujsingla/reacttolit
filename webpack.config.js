@@ -1,14 +1,16 @@
 const path = require("path");
 const HtmlWebpackPlugin = require("html-webpack-plugin");
 const MiniCssExtractPlugin = require("mini-css-extract-plugin");
-const ReactRefreshWebpackPlugin = require("@pmmmwh/react-refresh-webpack-plugin");
+// const ReactRefreshWebpackPlugin = require("@pmmmwh/react-refresh-webpack-plugin");
+
+// hot module refresh is not working in web component
 
 module.exports = (_, options) => {
   const ENV = options.mode;
   const isEnvDevelopment = ENV === "development";
   const isEnvProduction = ENV === "production";
   return {
-    target: ['es2021'],
+    target: ["es2021"],
     entry: "./src/index.tsx",
     mode: isEnvProduction ? "production" : "development",
     devtool: isEnvProduction ? "source-map" : "cheap-module-source-map",
@@ -16,7 +18,7 @@ module.exports = (_, options) => {
       path: path.resolve(__dirname, "dist"),
       filename: "bundle.js",
       publicPath: "/",
-      chunkFormat: 'module',
+      chunkFormat: "module",
     },
     resolve: {
       extensions: [".ts", ".tsx", ".js"],
@@ -41,16 +43,16 @@ module.exports = (_, options) => {
         template: "index.html",
       }),
       new MiniCssExtractPlugin(),
-      isEnvDevelopment && new ReactRefreshWebpackPlugin(),
+      // isEnvDevelopment && new ReactRefreshWebpackPlugin(),
     ].filter(Boolean),
     devServer: {
-      static: {
-        directory: path.resolve(__dirname, "dist"),
-      },
+      // static: {
+      //   directory: path.resolve(__dirname, "dist"),
+      // },
       // devMiddleware: {
       //   stats: "minimal",
       // },
-      hot: true,
+      hot: false,
       port: 3000,
       open: true,
       historyApiFallback: true,
