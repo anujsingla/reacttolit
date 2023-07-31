@@ -55,7 +55,7 @@ export function AppLayout({ children }: IAppLayout) {
     return (
       <PageHeaderTools>
         <Button
-          component={(props: any) => <Link {...props} to="/cart" />}
+          component={(props: any) => <Link {...props} to="/cart1" />}
           variant="link"
           countOptions={badgeCountObjectNotRead}
         >

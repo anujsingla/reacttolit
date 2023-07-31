@@ -1,5 +1,4 @@
 import {
-  CardBody,
   Flex,
   FlexItem,
   Grid,
@@ -24,7 +23,7 @@ export const ViewCartProducts = () => {
         {map(productCart, (c) => {
           const productDetail = find(products, (p) => p.id === c.id);
           return (
-            <ListItem>
+            <ListItem key={productDetail?.id}>
               <Grid md={2}>
                 <GridItem>
                   <img
