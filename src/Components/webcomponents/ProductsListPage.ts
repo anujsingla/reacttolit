@@ -1,18 +1,15 @@
-import { LitElement, html } from "lit";
+import { html } from "lit";
 import { customElement } from "lit/decorators/custom-element.js";
 import { fetchProducts } from "../../redux/productsReducer";
 import { store } from "../../redux/store";
 import { SelectorController } from "./controllers/selector-controller";
 import { map } from "lodash";
-import base from "@patternfly/react-core/dist/styles/base.css";
-import patternfly from "@patternfly/patternfly/patternfly.css";
 import { ReactRouterController } from "./controllers/react-router-controller";
-// import { Card } from "@patternfly/elements/react/pf-card/pf-card.js";
-// import { Button } from "@patternfly/elements/react/pf-button/pf-button.js";
+import { BasePage } from "./BasePage";
 
 @customElement("product-list")
-export class ProductsListPage extends LitElement {
-  static styles = [base, patternfly];
+export class ProductsListPage extends BasePage {
+  static styles = [...BasePage.styles];
 
   private sc = new SelectorController(this, store, (state) => state);
 

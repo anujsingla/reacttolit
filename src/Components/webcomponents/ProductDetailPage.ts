@@ -1,15 +1,14 @@
-import { LitElement, html } from "lit";
+import { html } from "lit";
 import { customElement } from "lit/decorators/custom-element.js";
-import { fetchProductById, fetchProducts } from "../../redux/productsReducer";
+import { fetchProductById } from "../../redux/productsReducer";
 import { store } from "../../redux/store";
 import { SelectorController } from "./controllers/selector-controller";
-import base from "@patternfly/react-core/dist/styles/base.css";
-import patternfly from "@patternfly/patternfly/patternfly.css";
 import { addCartItem } from "../../redux/cartReducer";
+import { BasePage } from "./BasePage";
 
 @customElement("product-detail")
-export class ProductDetailPage extends LitElement {
-  static styles = [base, patternfly];
+export class ProductDetailPage extends BasePage {
+  static styles = [...BasePage.styles];
 
   private sc = new SelectorController(this, store, (state) => state);
   private productId = '';

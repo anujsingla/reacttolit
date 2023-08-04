@@ -1,18 +1,14 @@
-import { LitElement, html } from "lit";
+import { html } from "lit";
 import { customElement } from "lit/decorators/custom-element.js";
-import { fetchProductById, fetchProducts } from "../../redux/productsReducer";
+import { fetchProducts } from "../../redux/productsReducer";
 import { store } from "../../redux/store";
 import { SelectorController } from "./controllers/selector-controller";
-import base from "@patternfly/react-core/dist/styles/base.css";
-import patternfly from "@patternfly/patternfly/patternfly.css";
-import { addCartItem } from "../../redux/cartReducer";
 import { find, map } from "lodash";
-// import { Card } from "@patternfly/elements/react/pf-card/pf-card.js";
-// import { Button } from "@patternfly/elements/react/pf-button/pf-button.js";
+import { BasePage } from "./BasePage";
 
 @customElement("view-cart-products")
-export class ViewCartProductsPage extends LitElement {
-  static styles = [base, patternfly];
+export class ViewCartProductsPage extends BasePage {
+  static styles = [...BasePage.styles];
 
   private sc = new SelectorController(this, store, (state) => state);
 
@@ -24,6 +20,10 @@ export class ViewCartProductsPage extends LitElement {
   render() {
     const { productCart, totalPrice } = this.sc?.selected?.productCart;
     const { data: products } = this.sc?.selected?.products?.products;
+
+    if (productCart?.length === 0) {
+      return html`<div>No Cart Items</div>`;
+    }
 
     return html`<main
       id="main-content-page-layout"
