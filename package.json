@@ -5,7 +5,8 @@
   "main": "index.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
-    "start": "webpack serve --mode development",
+    "start": "webpack serve --mode production",
+    "dev": "webpack serve --mode development",
     "build": "rimraf dist && webpack --mode production"
   },
   "keywords": [],
