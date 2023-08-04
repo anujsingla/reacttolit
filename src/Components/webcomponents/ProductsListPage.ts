@@ -6,6 +6,7 @@ import { SelectorController } from "./controllers/selector-controller";
 import { map } from "lodash";
 import base from "@patternfly/react-core/dist/styles/base.css";
 import patternfly from "@patternfly/patternfly/patternfly.css";
+import { ReactRouterController } from "./controllers/react-router-controller";
 // import { Card } from "@patternfly/elements/react/pf-card/pf-card.js";
 // import { Button } from "@patternfly/elements/react/pf-button/pf-button.js";
 
@@ -14,6 +15,8 @@ export class ProductsListPage extends LitElement {
   static styles = [base, patternfly];
 
   private sc = new SelectorController(this, store, (state) => state);
+
+  rc = new ReactRouterController(this);
 
   connectedCallback() {
     super.connectedCallback();

@@ -6,19 +6,27 @@ import { SelectorController } from "./controllers/selector-controller";
 import base from "@patternfly/react-core/dist/styles/base.css";
 import patternfly from "@patternfly/patternfly/patternfly.css";
 import { addCartItem } from "../../redux/cartReducer";
-// import { Card } from "@patternfly/elements/react/pf-card/pf-card.js";
-// import { Button } from "@patternfly/elements/react/pf-button/pf-button.js";
 
 @customElement("product-detail")
 export class ProductDetailPage extends LitElement {
   static styles = [base, patternfly];
 
   private sc = new SelectorController(this, store, (state) => state);
-  private productId = 1;
+  private productId = '';
 
   connectedCallback() {
+    this.getProductIdFromUrl();
     super.connectedCallback();
-    store.dispatch(fetchProductById("1"));
+    store.dispatch(fetchProductById(this.productId));
+  }
+
+  getProductIdFromUrl() {
+    const url = window.location.href;
+    const urlObj = new URL(url);
+    const pathnameSegments = urlObj.pathname.split('/');
+    const productId = pathnameSegments[pathnameSegments.length - 1];
+    console.log('productId', productId);
+    this.productId = productId;
   }
 
   async onAddToCartButton(event) {
