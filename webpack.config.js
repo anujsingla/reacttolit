@@ -28,6 +28,9 @@ module.exports = (_, options) => {
         {
           test: /\.css$/,
           use: [MiniCssExtractPlugin.loader, "css-loader"],
+          issuer: {
+            not: /webcomponents/,
+          },
         },
         {
           test: /\.(ts|tsx)$/,
@@ -35,6 +38,11 @@ module.exports = (_, options) => {
           use: {
             loader: "ts-loader",
           },
+        },
+        {
+          test: /\.css$/,
+          loader: "lit-css-loader",
+          issuer: /webcomponents/,
         },
       ],
     },

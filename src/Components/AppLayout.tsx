@@ -14,6 +14,10 @@ import { AppTabs, AppTabKey } from "../enum/appTabs";
 import { Link, NavLink } from "react-router-dom";
 import { keys, map } from "lodash";
 import { useAppSelector } from "../redux/reduxHook";
+import { useNavigate } from "react-router-dom";
+import { useEffect } from "react";
+import { ReactRouterController } from "./webcomponents/controllers/react-router-controller";
+
 interface IAppLayout {
   children: React.ReactNode;
 }
@@ -24,6 +28,11 @@ export function AppLayout({ children }: IAppLayout) {
   const logoProps = {
     href: "/",
   };
+
+  const navigate = useNavigate();
+  useEffect(() => {
+    ReactRouterController.register(navigate);
+  }, [navigate]);
 
   const PageNav = (
     <Nav
