@@ -1,5 +1,6 @@
 import { AppLayout } from "./Components/AppLayout";
 import { AppRoutes } from "./Components/AppRoutes";
+import { AppRoutesWebComponent } from "./Components/AppRoutesWebComponent";
 import { ToastContainer } from "./Components/ToastNotification";
 
 const App = () => {
@@ -12,7 +13,8 @@ const App = () => {
         pauseOnHover={true}
       />
       <AppLayout>
-        <AppRoutes />
+        {/* <AppRoutes /> */}
+        <AppRoutesWebComponent />
       </AppLayout>
     </>
   );
