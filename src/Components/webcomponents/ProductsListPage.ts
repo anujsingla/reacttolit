@@ -4,7 +4,7 @@ import { fetchProducts } from "../../redux/productsReducer";
 import { store } from "../../redux/store";
 import { SelectorController } from "./controllers/selector-controller";
 import { map } from "lodash";
-import { ReactRouterController } from "./controllers/react-router-controller";
+// import { ReactRouterController } from "./controllers/react-router-controller";
 import { BasePage } from "./BasePage";
 
 @customElement("product-list")
@@ -13,7 +13,7 @@ export class ProductsListPage extends BasePage {
 
   private sc = new SelectorController(this, store, (state) => state);
 
-  rc = new ReactRouterController(this);
+  // rc = new ReactRouterController(this);
 
   connectedCallback() {
     super.connectedCallback();
