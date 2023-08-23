@@ -5,6 +5,7 @@ import "./ProductsListPage";
 import "./AboutPage";
 import "./ProductDetailPage";
 import "./ViewCartProductsPage";
+import "./NotFoundPage";
 
 @customElement("app-routes")
 export class AppRoutesPage extends LitElement {
@@ -29,6 +30,7 @@ export class AppRoutesPage extends LitElement {
         return html`<view-cart-products></view-cart-products>`;
       },
     },
+    { path: "/*", render: () => html`<not-found></not-found>` },
   ]);
 
   connectedCallback() {
