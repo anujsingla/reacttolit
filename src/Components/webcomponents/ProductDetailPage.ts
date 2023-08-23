@@ -5,27 +5,19 @@ import { store } from "../../redux/store";
 import { SelectorController } from "./controllers/selector-controller";
 import { addCartItem } from "../../redux/cartReducer";
 import { BasePage } from "./BasePage";
+import { property } from "lit/decorators/property.js";
 
 @customElement("product-detail")
 export class ProductDetailPage extends BasePage {
   static styles = [...BasePage.styles];
 
+  @property({ reflect: true }) productId = "";
+
   private sc = new SelectorController(this, store, (state) => state);
-  private productId = '';
 
   connectedCallback() {
-    this.getProductIdFromUrl();
     super.connectedCallback();
     store.dispatch(fetchProductById(this.productId));
-  }
-
-  getProductIdFromUrl() {
-    const url = window.location.href;
-    const urlObj = new URL(url);
-    const pathnameSegments = urlObj.pathname.split('/');
-    const productId = pathnameSegments[pathnameSegments.length - 1];
-    console.log('productId', productId);
-    this.productId = productId;
   }
 
   async onAddToCartButton(event) {

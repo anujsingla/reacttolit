@@ -1,5 +1,4 @@
-import { AppLayout } from "./Components/AppLayout";
-import { AppRoutes } from "./Components/AppRoutes";
+import { AppLayoutWebComponent } from "./Components/AppLayoutWebComponent";
 import { ToastContainer } from "./Components/ToastNotification";
 
 const App = () => {
@@ -11,9 +10,7 @@ const App = () => {
         pauseOnFocusLoss={true}
         pauseOnHover={true}
       />
-      <AppLayout>
-        <AppRoutes />
-      </AppLayout>
+      <AppLayoutWebComponent />
     </>
   );
 };
