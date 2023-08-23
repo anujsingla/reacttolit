@@ -16,9 +16,7 @@ export class ProductDetailPage extends BasePage {
   private sc = new SelectorController(this, store, (state) => state);
 
   connectedCallback() {
-    console.log("productId", this.productId);
     super.connectedCallback();
-
     store.dispatch(fetchProductById(this.productId));
   }
 
