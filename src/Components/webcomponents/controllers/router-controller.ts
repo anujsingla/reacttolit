@@ -1,6 +1,6 @@
 import type { ReactiveController, ReactiveControllerHost } from "lit";
 
-import { redirect } from "react-router-dom";
+// import { redirect } from "react-router-dom";
 
 export class ReRouterController implements ReactiveController {
   static hosts = new Set<ReactiveControllerHost & Element>();
