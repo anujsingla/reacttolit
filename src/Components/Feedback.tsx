@@ -10,7 +10,7 @@ import {
   ActionGroup,
   Button,
 } from "@patternfly/react-core";
-import { ToastNotification } from "./ToastNotification";
+// import { ToastNotification } from "./ToastNotification";
 
 export const Feedback = () => {
   const [name, setName] = React.useState("");
@@ -48,7 +48,7 @@ export const Feedback = () => {
   ];
 
   const onSubmitForm = () => {
-    ToastNotification.addSuccessMessage("successful message");
+    // ToastNotification.addSuccessMessage("successful message");
   };
 
   return (

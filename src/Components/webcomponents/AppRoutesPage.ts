@@ -6,6 +6,8 @@ import "./AboutPage";
 import "./ProductDetailPage";
 import "./ViewCartProductsPage";
 import "./NotFoundPage";
+import "./ToastNotificationPage";
+import "./FeedbackPage"
 
 @customElement("app-routes")
 export class AppRoutesPage extends LitElement {
@@ -25,6 +27,12 @@ export class AppRoutesPage extends LitElement {
       },
     },
     {
+      path: "/feedback",
+      render: () => {
+        return html`<feedback-page></feedback-page>`;
+      },
+    },
+    {
       path: "/cart",
       render: () => {
         return html`<view-cart-products></view-cart-products>`;
@@ -38,6 +46,7 @@ export class AppRoutesPage extends LitElement {
   }
 
   render() {
-    return html` <main>${this.router.outlet()}</main> `;
+    return html`
+      <main>${this.router.outlet()}</main>`;
   }
 }

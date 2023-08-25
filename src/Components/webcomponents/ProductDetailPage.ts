@@ -31,6 +31,7 @@ export class ProductDetailPage extends BasePage {
       quantity: 1,
     };
     await store.dispatch(addCartItem(item));
+    (this.shadowRoot.querySelector('#carttoastnotification') as any)?.show("Successfully added item in the cart", 6000);
   }
 
   render() {
@@ -50,6 +51,6 @@ export class ProductDetailPage extends BasePage {
       </p>
       <div slot="footer">₹${productDetail?.price}</div>
       <pf-button @click="${this.onAddToCartButton}">Add to cart</pf-button>
-    </pf-card>`;
+    </pf-card> <toast-notification id="carttoastnotification"></toast-notification>`;
   }
 }
