@@ -6,6 +6,7 @@ import "./AboutPage";
 import "./ProductDetailPage";
 import "./ViewCartProductsPage";
 import "./NotFoundPage";
+import "./ToastNotificationPage";
 
 @customElement("app-routes")
 export class AppRoutesPage extends LitElement {
@@ -38,6 +39,7 @@ export class AppRoutesPage extends LitElement {
   }
 
   render() {
-    return html` <main>${this.router.outlet()}</main> `;
+    return html`<toast-notification></toast-notification>
+      <main>${this.router.outlet()}</main>`;
   }
 }
