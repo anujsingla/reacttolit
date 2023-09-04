@@ -11,7 +11,7 @@ module.exports = (_, options) => {
   const isEnvProduction = ENV === "production";
   return {
     target: ["es2021"],
-    entry: "./src/index.tsx",
+    entry: "./src/index.ts",
     mode: isEnvProduction ? "production" : "development",
     devtool: isEnvProduction ? "source-map" : "cheap-module-source-map",
     output: {
