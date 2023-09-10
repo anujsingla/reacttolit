@@ -1,4 +1,3 @@
-import { Dispatch } from "react";
 import { createSlice, PayloadAction } from "@reduxjs/toolkit";
 import { IApiObject, IProduct } from "../models/apiUtils";
 import {
@@ -42,7 +41,7 @@ export const { setProductList, setProductsByIds } = productsReducer.actions;
 
 export const fetchProducts =
   () =>
-  async (dispatch: Dispatch<any>): Promise<void> => {
+  async (dispatch: any): Promise<void> => {
     try {
       dispatch(setProductList(getApiObject([], true)));
       const productResponse = await fetchProductData();
@@ -59,7 +58,7 @@ export const fetchProducts =
 export const fetchProductById =
   (id: string) =>
   async (
-    dispatch: Dispatch<any>,
+    dispatch: any,
     getState: () => IStateReduced
   ): Promise<void> => {
     const existingProductsIds = getState()?.products?.productByIds?.data || {};
