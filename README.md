@@ -4,8 +4,8 @@
 
 Welcome to the Shopping App! This application allows users to browse a variety of products and add them to their shopping cart.
 It was originally built using the React framework and has been migrated to the Lit framework with PatternFly elements to provide an efficient and user-friendly shopping experience. I have created seperate branch for React and lit framework.
-main branch -> React app (https://reactapp-tan-omega.vercel.app/products)
-webcomponentsmigration branch -> Lit framework app (https://webcomponentlitmigration.vercel.app/)
+- main branch -> React app (https://reactapp-tan-omega.vercel.app/products)
+- webcomponentsmigration branch -> Lit framework app (https://webcomponentlitmigration.vercel.app/)
 
 ## Features
 
@@ -17,5 +17,3 @@ webcomponentsmigration branch -> Lit framework app (https://webcomponentlitmigra
 ## Migration from React
 
 This app was initially developed using the React framework. However, in order to improve performance and streamline the codebase, we have migrated it to the Lit framework with PatternFly elements. This migration offers several advantages, including enhanced performance, smaller bundle sizes, and improved maintainability.
-
-React - 2.54 MiB (main.css, bundle.js)
