@@ -18,7 +18,7 @@ This app was initially developed using the React framework. However, in order to
 
 ## Libraries and Tools
 
-In this project, we've used several libraries and tools for the migration from React to Lit Framework:
+In this project, we have used several libraries and tools for the migration from React to Lit Framework:
 
 - [Lit Framework](https://lit.dev/): A lightweight web component framework.
 - [@lit-labs/react](https://www.npmjs.com/package/@lit-labs/react): React integration for Web Components and Reactive Controllers.
