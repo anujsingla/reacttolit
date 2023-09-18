@@ -6,7 +6,8 @@ import {
   getApiObject,
 } from "../utils/apiUtils";
 import { IStateReduced } from "./store";
-import { clone, filter, isEmpty } from "lodash";
+import isEmpty from "lodash/isEmpty";
+import clone from "lodash/clone";
 
 export interface IProductByIds {
   [id: string]: Partial<IProduct>;
