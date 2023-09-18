@@ -3,7 +3,7 @@ import { customElement } from "lit/decorators/custom-element.js";
 import { fetchProducts } from "../../redux/productsReducer";
 import { store } from "../../redux/store";
 import { SelectorController } from "./controllers/selector-controller";
-import { map } from "lodash";
+import map from "lodash/map";
 import { BasePage } from "./BasePage";
 
 @customElement("product-list")
